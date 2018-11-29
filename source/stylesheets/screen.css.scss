@@ -155,28 +155,35 @@ html, body {
   // This is the currently selected ToC entry
   .toc-link.active {
     background-color: $main-bg;
-    color: $main-text;
+    color: $link-color;
   }
 
   // this is parent links of the currently selected ToC entry
   .toc-link {
     padding: 0.4em 2em;
+    color: $nav-text;
   }
 
   .toc-link.active-parent {
-    background-color: $nav-bg;
-    color: $nav-active-parent-text;
+    background-color: $main-bg;
+    color: $nav-item-text;
   }
 
   .toc-list-h2 {
     display: none;
-    background-color: $nav-bg;
+    background-color: $main-bg;
     font-weight: 500;
   }
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent + $nav-indent;
     font-size: 12px;
+    color: $nav-item-text;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .toc-footer {
@@ -296,14 +303,10 @@ html, body {
     line-height: 30px;
     outline: 0;
 
-    &:active, &:focus {
-      background-color: $lang-select-pressed-bg;
-      color: $lang-select-pressed-text;
-    }
-
+    &:active,
+    &:focus,
     &.active {
-      background-color: $lang-select-active-bg;
-      color: $lang-select-active-text;
+      color: $link-color;
     }
   }
 
@@ -350,16 +353,33 @@ html, body {
     clear:both;
   }
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @extend %header-font;
-    font-size: 2.15em;
+    text-transform: uppercase;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $heading-color;
+    letter-spacing: 1px;
+    margin-top: 3em;
+    margin-bottom: 1em;
+  }
+
+  h1,
+  h2 {
     padding-top: 1em;
-    padding-bottom: 0.5em;
-    margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
+    padding-bottom: 1em;
     border-top: 1px solid $text-border-color;
-    border-bottom: 0;
-    background-color: #fdfdfd;
+    margin-bottom: 0;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -367,24 +387,25 @@ html, body {
     margin-top: 0;
   }
 
-  h2 {
-    @extend %header-font;
-    font-size: 1.85em;
-    margin-top: 3em;
-    margin-bottom: 0;
-    border-top: 1px solid $text-border-color;
-    padding-top: 2em;
-    padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
+  h1 {
+    font-size: 28px;
   }
 
-  h3, h4 {
-    color: $heading-color;
-    letter-spacing: 1px;
-    font-size: 1.23em;
-    text-transform: uppercase;
-    margin-top: 3em;
-    margin-bottom: 1em;
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  h5,
+  h6 {
+    font-size: 14px;
   }
 
   // h2s right after h1s should bump right up
@@ -392,13 +413,6 @@ html, body {
   h1 + h2, h1 + div + h2 {
     margin-top: $h1-margin-bottom * -1;
     border-top: none;
-  }
-
-  h5, h6 {
-    @extend %header-font;
-    font-size:  1.08em;;
-    margin-top: 3em;
-    margin-bottom: 1em;
   }
 
   a {
@@ -537,8 +551,9 @@ html, body {
 
 .content {
   pre, blockquote {
-    background-color: $code-bg;
+    background-color: $code-example-bg;
     color: #fff;
+    padding: 1.5em 20px;
 
     margin: 0;
     width: $examples-width;
@@ -569,7 +584,7 @@ html, body {
   blockquote {
     &>p {
       background-color: $code-annotation-bg;
-      padding: $code-annotation-padding 2em;
+      padding: $code-annotation-padding 1em;
       color: #eee;
     }
   }
@@ -636,5 +651,5 @@ html, body {
 }
 
 .highlight, .highlight .w {
-  background-color: $code-bg;
+  background-color: $code-example-bg;
 }
