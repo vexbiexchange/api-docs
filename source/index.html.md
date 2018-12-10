@@ -2,18 +2,20 @@
 title: Vexbi API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell: cURL
-  - php: PHP
-  - ruby: Ruby
   - python: Python
+  # - shell: cURL
+  # - php: PHP
+  # - ruby: Ruby
 
 includes:
   - introduction
-  - errors
+  - account
+  - orders
+  # - errors
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://vexbi.com'>Go to Vexbi.com</a>
+  # - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 search: true
 ---
