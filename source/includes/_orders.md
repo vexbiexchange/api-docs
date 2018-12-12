@@ -5,11 +5,10 @@ Managing orders programatically can be done with the following methods.
 ### Create Order
 
 ```python
-from vexbi import Order, Client
-client = Client(app_id='APP_ID', secret_key='APP_SECRET')
+from vexbi import API
+api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-order = Order.create(
-  client=client, 
+order = api.create_order(
   market='btcusd', 
   side='sell',
   volume='3.0',
@@ -40,10 +39,10 @@ Create and place a new sell/buy order.
 ### Cancel an Order
 
 ```python
-from vexbi import Order, Client
-client = Client(app_id='APP_ID', secret_key='APP_SECRET')
+from vexbi import API
+api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-order = Order.delete(client, 10)
+order = api.delete_order(10)
 ```
 
 Cancel an order already placed.
@@ -66,10 +65,10 @@ Cancel an order already placed.
 ### Cancel All Orders
 
 ```python
-from vexbi import Order, Client
-client = Client(app_id='APP_ID', secret_key='APP_SECRET')
+from vexbi import API
+api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-order = Order.clear(client, 'sell')
+result = api.clear_all('sell')
 ```
 
 Cancel all your existent orders or for a specific side.
@@ -92,10 +91,10 @@ Cancel all your existent orders or for a specific side.
 ### Get Order
 
 ```python
-from vexbi import Order, Client
-client = Client(app_id='APP_ID', secret_key='APP_SECRET')
+from vexbi import API
+api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-order = Order.find(client, 10)
+order = api.get_order(10)
 ```
 
 Get an existent order.
@@ -118,11 +117,10 @@ Get an existent order.
 ### Get Orders (paginated)
 
 ```python
-from vexbi import Order, Client
-client = Client(app_id='APP_ID', secret_key='APP_SECRET')
+from vexbi import API
+api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-order = Order.all(
-  client=client,
+orders = api.get_orders(
   market='btcusd',
   limit='30',
 )

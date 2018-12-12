@@ -33,12 +33,12 @@ We currently suppport **Python** but are working on adding more languages.
 ### Python
 
 ```python
-# Import the Client 
-from vexbi import Client
+# Import the API Client 
+from vexbi import API
 
 # Configure Vexbi Library, you will 
 # pass this to every call you make to our servers.
-client = Client(app_id='APP_ID', secret_key='APP_SECRET')
+api = API(app_id='APP_ID', secret_key='APP_SECRET')
 ```
 
 The best way to install Vexbi lib is with [PIP](https://pypi.python.org/pypi).
