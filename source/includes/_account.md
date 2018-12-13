@@ -8,7 +8,8 @@ Interact with your profile and accounts.
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-account_info = api.get_account_info(client)
+account_info = api.get_account_info()
+email = account_info.email
 ```
 
 Get your profile and accounts info.
