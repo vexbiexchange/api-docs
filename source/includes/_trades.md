@@ -2,7 +2,7 @@
 
 Fetch information about trades.
 
-### Get Market Trades
+## Get Market Trades
 
 ```python
 # Get Market Trades
@@ -14,6 +14,32 @@ query = {
   'from': 10
 }
 trades = api.trades(market='btcmxn', query=query)
+```
+> Response from Vexbi
+```json
+[
+  {
+    "id": 563,
+    "price": "71285.84813089",
+    "volume": "0.1",
+    "funds": "7128.584813089",
+    "market": "btcmxn",
+    "created_at": "2018-12-14T12:46:15-06:00",
+    "side": null,
+    "type": "buy"
+  },
+  {
+    "id": 562,
+    "price": "68668.714434",
+    "volume": "0.00343854",
+    "funds": "236.12012132988636",
+    "market": "btcmxn",
+    "created_at": "2018-12-12T16:48:18-06:00",
+    "side": null,
+    "type": "sell"
+  },
+  ...
+]
 ```
 
 Get recent trades on market, each trade is included only once. Trades are sorted in reverse creation order.
@@ -38,7 +64,7 @@ Get recent trades on market, each trade is included only once. Trades are sorted
 | ---- | ----------- |
 | 200 | Get recent trades on market. |
 
-### Get My Trades
+## Get My Trades
 
 ```python
 # Get My Trades
@@ -50,6 +76,36 @@ query = {
   'to': 120
 }
 trades = api.my_trades(market='btcmxn', query=query)
+```
+
+> Response from Vexbi:
+
+```json
+[
+  {
+    "id": 563,
+    "price": "71285.84813089",
+    "volume": "0.1",
+    "funds": "7128.584813089",
+    "market": "btcmxn",
+    "created_at": "2018-12-14T12:46:15-06:00",
+    "side": "bid",
+    "order_id": 50787,
+    "type": "buy"
+  },
+  {
+    "id": 46,
+    "price": "185000.0",
+    "volume": "0.001",
+    "funds": "185.0",
+    "market": "btcmxn",
+    "created_at": "2018-11-06T18:48:50-06:00",
+    "side": "ask",
+    "order_id": 1605,
+    "type": "buy"
+  },
+  ...
+]
 ```
 
 Get your executed trades. Trades are sorted in reverse creation order.

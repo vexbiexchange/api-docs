@@ -2,7 +2,7 @@
 
 Managing orders programatically can be done with the following methods.
 
-### Create Order
+## Create Order
 
 ```python
 # Create Order
@@ -12,10 +12,29 @@ api = API(app_id='APP_ID', secret_key='APP_SECRET')
 order_data = {
   'market': 'btcmxn', 
   'side': 'sell',
-  'volume': '3.0',
-  'price': '5000.0'
+  'volume': '0.05',
+  'price': '70000.0'
 }
 order = api.create_order(order_data=order_data)
+```
+
+> Response from Vexbi:
+
+```json
+{
+  "id": 50790,
+  "side": "sell",
+  "ord_type": "limit",
+  "price": "70000.0",
+  "avg_price": "0.0",
+  "state": "wait",
+  "market": "btcmxn",
+  "created_at": "2018-12-14T13:19:24-06:00",
+  "volume": "0.05",
+  "remaining_volume": "0.05",
+  "executed_volume": "0.0",
+  "trades_count": 0
+}
 ```
 
 Create and place a new sell/buy order.
@@ -38,7 +57,7 @@ Create and place a new sell/buy order.
 | ---- | ----------- |
 | 201 | Create a Sell/Buy order. |
 
-### Cancel an Order
+## Cancel an Order
 
 ```python
 # Cancel Order
@@ -46,6 +65,25 @@ from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 order = api.delete_order(order_id=10)
+```
+
+> Response from Vexbi:
+
+```json
+{
+  "id": 50790,
+  "side": "sell",
+  "ord_type": "limit",
+  "price": "70000.0",
+  "avg_price": "0.0",
+  "state": "wait",
+  "market": "btcmxn",
+  "created_at": "2018-12-14T13:19:24-06:00",
+  "volume": "0.05",
+  "remaining_volume": "0.05",
+  "executed_volume": "0.0",
+  "trades_count": 0
+}
 ```
 
 Cancel an order already placed.
@@ -65,7 +103,7 @@ Cancel an order already placed.
 | ---- | ----------- |
 | 201 | Cancel an order. |
 
-### Cancel All Orders
+## Cancel All Orders
 
 ```python
 # Cancel All Orders
@@ -74,6 +112,32 @@ api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 clear_selection = { 'side': 'sell' }
 result = api.clear_all(data=clear_selection)
+```
+
+> Response from Vexbi:
+
+```json
+[
+  {
+    "id": 50789,
+    "side": "sell",
+    "ord_type": "limit",
+    "price": "70000.0",
+    "avg_price": "0.0",
+    "state": "wait",
+    "market": "btcmxn",
+    "created_at": "2018-12-14T13:16:34-06:00",
+    "volume": "0.05",
+    "remaining_volume": "0.05",
+    "executed_volume": "0.0",
+    "trades_count": 0
+  },
+  {
+    "id": 50853,
+    ...
+  },
+  ...
+]
 ```
 
 Cancel all your existent orders or for a specific side.
@@ -93,15 +157,38 @@ Cancel all your existent orders or for a specific side.
 | ---- | ----------- |
 | 201 | Cancel all my orders. |
 
-### Get Order
+## Get Order
 
 ```python
 # Get Order
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-order = api.get_order(order_id=10)
+order = api.get_order(order_id=50792)
+order.id
+order.remaining_volume
 ```
+
+> Response from Vexbi:
+
+```json
+{
+  "id": 50792,
+  "side": "sell",
+  "ord_type": "limit",
+  "price": "70000.0",
+  "avg_price": "0.0",
+  "state": "wait",
+  "market": "btcmxn",
+  "created_at": "2018-12-14T13:19:24-06:00",
+  "volume": "0.05",
+  "remaining_volume": "0.05",
+  "executed_volume": "0.0",
+  "trades_count": 0,
+  "trades": []
+}
+```
+
 
 Get an existent order.
 
@@ -120,15 +207,37 @@ Get an existent order.
 | ---- | ----------- |
 | 200 | Get an orders. |
 
-### Get Orders (paginated)
+## Get Orders (paginated)
 
 ```python
-# Create Orders (Paginated)
+# Get Orders (Paginated)
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 query = { 'limit': 30 }
 orders = api.get_orders(market='btcmxn', query=query)
+```
+
+> Response from Vexbi:
+
+```json
+[
+  {
+    "id": 50792,
+    "side": "sell",
+    "ord_type": "limit",
+    "price": "70000.0",
+    "avg_price": "0.0",
+    "state": "wait",
+    "market": "btcmxn",
+    "created_at": "2018-12-14T13:19:24-06:00",
+    "volume": "0.05",
+    "remaining_volume": "0.05",
+    "executed_volume": "0.0",
+    "trades_count": 0
+  },
+  ...
+]
 ```
 
 Get a list of existent orders.
