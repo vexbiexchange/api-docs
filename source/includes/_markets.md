@@ -5,6 +5,7 @@ Fetch information about markets.
 ### Get Available Markets
 
 ```python
+# Get Available Markets
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
@@ -25,6 +26,7 @@ Get all available markets.
 ### Get Tickers
 
 ```python
+# Get Tickers
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 

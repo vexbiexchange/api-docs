@@ -5,6 +5,7 @@ Interact with your profile and accounts.
 ### Get Account Info
 
 ```python
+# Get Account Info
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
