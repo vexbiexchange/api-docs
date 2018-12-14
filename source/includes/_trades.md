@@ -10,8 +10,8 @@ from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 query = {
-  limit: 80,
-  from: 10
+  'limit': 80,
+  'from': 10
 }
 trades = api.trades(market='btcmxn', query=query)
 ```
@@ -46,8 +46,8 @@ from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 query = {
-  from: 10,
-  to: 120
+  'from': 10,
+  'to': 120
 }
 trades = api.my_trades(market='btcmxn', query=query)
 ```

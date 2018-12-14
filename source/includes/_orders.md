@@ -10,10 +10,10 @@ from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 order_data = {
-  market: 'btcmxn', 
-  side: 'sell',
-  volume: '3.0',
-  price: '5000.0'
+  'market': 'btcmxn', 
+  'side': 'sell',
+  'volume': '3.0',
+  'price': '5000.0'
 }
 order = api.create_order(order_data=order_data)
 ```
@@ -72,7 +72,7 @@ Cancel an order already placed.
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-clear_selection = { side: 'sell' }
+clear_selection = { 'side': 'sell' }
 result = api.clear_all(data=clear_selection)
 ```
 
@@ -127,7 +127,7 @@ Get an existent order.
 from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
-query = { limit: '30' }
+query = { 'limit': 30 }
 orders = api.get_orders(market='btcmxn', query=query)
 ```
 
