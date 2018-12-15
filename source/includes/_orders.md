@@ -165,8 +165,8 @@ from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 order = api.get_order(order_id=50792)
-order.id
-order.remaining_volume
+order["id"]
+order["remaining_volume"]
 ```
 
 > Response from Vexbi:

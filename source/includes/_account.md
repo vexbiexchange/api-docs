@@ -10,7 +10,7 @@ from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 account_info = api.get_account_info()
-email = account_info.email
+email = account_info["email"]
 ```
 
 > Response from Vexbi:
