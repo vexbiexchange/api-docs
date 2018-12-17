@@ -8,7 +8,7 @@ At this time, we have language bindings for **Python** with more to come! You ca
 
 All API calls are versioned, and the current Vexbi API is v1.0. We will never introduce any breaking changes within any version, but may add new, non-breaking features and enhancements from time to time.
 
-<!-- #### Sandbox environment
+#### Sandbox environment
 
 For your convenience Vexbi offers a Sandbox environment where you can confidently test your code.
 
@@ -18,7 +18,7 @@ Once you have an account you will need an _APP_ID_ and an _APP_SECRET_ which you
 
 Just change the **www**.vexbi.com for **sandbox**.vexbi.com in every endpoint that you use.
 
-<aside class="warning">The Sandbox environment is not intended to be used to create real world orders. Orders booked in Sandbox will be using testnet networks only.</aside> -->
+<aside class="warning">The Sandbox environment is not intended to be used to create real world orders. Orders booked in Sandbox will be using testnet networks only.</aside>
 
 #### Production environment
 
@@ -39,6 +39,10 @@ from vexbi import API
 # Configure Vexbi Library, you will 
 # pass this to every call you make to our servers.
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
+
+# If you want to make tests without impacting your funds
+# you can use our sandbox enviroment with:
+api.use_sandbox()
 ```
 
 The best way to install Vexbi lib is with [PIP](https://pypi.python.org/pypi).
