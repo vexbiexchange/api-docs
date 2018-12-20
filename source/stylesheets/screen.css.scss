@@ -486,6 +486,10 @@ html, body {
     @extend %code-font;
   }
 
+  blockquote code {
+    background-color: initial;
+  }
+
   pre>code {
     background-color: transparent;
     padding: 0;
