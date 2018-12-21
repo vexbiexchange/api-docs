@@ -46,10 +46,10 @@ Create and place a new sell/buy order.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btcmxn'. All available markets can be found at /api/v2/markets. | Yes | string |
+| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. | Yes | string |
 | side | String | Either 'sell' or 'buy'. |
-| volume | String | The amount user want to sell/buy. An order could be partially executed, e.g. an order sell 5 btc can be matched with a buy 3 btc order, left 2 btc to be sold; in this case the order's volume would be '5.0', its remaining_volume would be '2.0', its executed volume is '3.0'. |
-| price | String | **Optional.** (Defaults to market price) Price for each unit. e.g. If you want to sell/buy 1 btc at 3000 usd, the price is '3000.0' |
+| volume | String | The amount to sell or buy. Bear in mind that an order can be partially executed. For example a sell order of 5 BTC can be matched with a buy order for 3 BTC, resulting in an outstanding balance of 2 BTC waiting to be sold. For this scenario the order's volume would be '5.0', it's remaining_volume would be '2.0' and it's executed volume would be '3.0'. |
+| price | String | **Optional.** (Defaults to market price) Price for each unit. For example If you want to sell/buy 1 BTC at 3000 USD, the price is '3000.0' |
 
 ##### Responses
 
@@ -249,7 +249,7 @@ Get a list of existent orders.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btcmxn'. All available markets can be found at /api/v2/markets. |
+| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. |
 | state | String | **Optional.** Filter order by state, default to 'wait' (active orders). |
 | limit | Integer | **Optional.** (Defaults to 100) Limit the number of returned orders. |
 | page | Integer | **Optional.** Specify the page of paginated results. |

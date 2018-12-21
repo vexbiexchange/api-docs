@@ -51,7 +51,7 @@ Get recent trades on market, each trade is included only once. Trades are sorted
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btcmxn'. All available markets can be found at /api/v2/markets. |
+| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. |
 | limit | Integer | **Optional.** Limit the number of returned trades. Default to 50. |
 | timestamp | Integer | **Optional.** An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned. |
 | from | Integer | **Optional.** Trade id. If set, only trades created AFTER the trade will be returned. |
@@ -117,7 +117,7 @@ Get your executed trades. Trades are sorted in reverse creation order.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btcmxn'. All available markets can be found at /api/v2/markets. |
+| market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. |
 | limit | Integer | **Optional.** Limit the number of returned trades. Default to 50. |
 | timestamp | Integer | **Optional.** An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned. |
 | from | Integer | **Optional.** Trade id. If set, only trades created AFTER the trade will be returned. |
