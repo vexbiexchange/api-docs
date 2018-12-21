@@ -42,7 +42,7 @@ trades = api.trades(market='btcmxn', query=query)
 ]
 ```
 
-Get recent trades on market, each trade is included only once. Trades are sorted in reverse creation order.
+Get recent trades (each trade is included only once). Trades are sorted in order of most recent to least recent.
 
 ##### HTTP Request
 `GET https://www.vexbi.com/api/v2/trades`
@@ -53,10 +53,10 @@ Get recent trades on market, each trade is included only once. Trades are sorted
 | ---- | ---- | ----------- |
 | market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. |
 | limit | Integer | **Optional.** Limit the number of returned trades. Default to 50. |
-| timestamp | Integer | **Optional.** An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned. |
-| from | Integer | **Optional.** Trade id. If set, only trades created AFTER the trade will be returned. |
-| to | Integer | **Optional.** Trade id. If set, only trades created BEFORE the trade will be returned. |
-| order_by | String | **Optional.** If set, returned trades will be sorted in specific order, default to 'desc'. |
+| timestamp | Integer | **Optional.** An integer represents the seconds elapsed since UNIX Epoch. If set, only trades executed before the time will be returned. |
+| from | Integer | **Optional.** Trade id. If set, only trades created AFTER this will be returned. |
+| to | Integer | **Optional.** Trade id. If set, only trades created BEFORE this will be returned. |
+| order_by | String | **Optional.** If set, returned trades will be sorted in a specific order, defaulting to ‘desc’ (descending). |
 
 ##### Responses
 
@@ -108,7 +108,7 @@ trades = api.my_trades(market='btcmxn', query=query)
 ]
 ```
 
-Get your executed trades. Trades are sorted in reverse creation order.
+Get your executed trades. Trades are sorted in order of most to least recent.
 
 ##### HTTP Request
 `GET https://www.vexbi.com/api/v2/trades/my`
@@ -119,10 +119,10 @@ Get your executed trades. Trades are sorted in reverse creation order.
 | ---- | ---- | ----------- |
 | market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. |
 | limit | Integer | **Optional.** Limit the number of returned trades. Default to 50. |
-| timestamp | Integer | **Optional.** An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned. |
-| from | Integer | **Optional.** Trade id. If set, only trades created AFTER the trade will be returned. |
-| to | Integer | **Optional.** Trade id. If set, only trades created BEFORE the trade will be returned. |
-| order_by | String | **Optional.** If set, returned trades will be sorted in specific order, default to 'desc'. |
+| timestamp | Integer | **Optional.** An integer represents the seconds elapsed since UNIX Epoch. If set, only trades executed before the time will be returned. |
+| from | Integer | **Optional.** Trade id. If set, only trades created AFTER this will be returned. |
+| to | Integer | **Optional.** Trade id. If set, only trades created BEFORE this will be returned. |
+| order_by | String | **Optional.** If set, returned trades will be sorted in a specific order, defaulting to ‘desc’ (descending). |
 
 ##### Responses
 

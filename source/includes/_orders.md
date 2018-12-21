@@ -1,6 +1,6 @@
 # Orders
 
-Managing orders programatically can be done with the following methods.
+Managing orders programatically can be done using the following methods.
 
 ## Create Order
 
@@ -48,8 +48,8 @@ Create and place a new sell/buy order.
 | ----- | ---- | ----------- |
 | market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. | Yes | string |
 | side | String | Either 'sell' or 'buy'. |
-| volume | String | The amount to sell or buy. Bear in mind that an order can be partially executed. For example a sell order of 5 BTC can be matched with a buy order for 3 BTC, resulting in an outstanding balance of 2 BTC waiting to be sold. For this scenario the order's volume would be '5.0', it's remaining_volume would be '2.0' and it's executed volume would be '3.0'. |
-| price | String | **Optional.** (Defaults to market price) Price for each unit. For example If you want to sell/buy 1 BTC at 3000 USD, the price is '3000.0' |
+| volume | String | The amount to sell or buy. Bear in mind that an order can be partially executed. For example a sell order of 5 BTC can be matched with a buy order for 3 BTC, resulting in an outstanding balance of 2 BTC waiting to be sold. For this scenario the order's volume would be '5.0', its remaining_volume would be '2.0' and its executed volume would be '3.0'. |
+| price | String | **Optional.** (Defaults to market price) Price for each unit. For example If you want to sell/buy 1 BTC at 3000 MXN, the price is '3000.00' |
 
 ##### Responses
 
@@ -140,7 +140,7 @@ result = api.clear_all(data=clear_selection)
 ]
 ```
 
-Cancel all your existent orders or for a specific side.
+Cancel all your open orders or open orders for a specific side only.
 
 ##### HTTP Request
 `POST https://www.vexbi.com/api/v2/orders/clear`
@@ -149,7 +149,7 @@ Cancel all your existent orders or for a specific side.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| side | String | **Optional.** (`sell` or `buy`) If present, only sell orders (asks) or buy orders (bids) will be canncelled. |
+| side | String | **Optional.** (`sell` or `buy`) If present, only sell orders (asks) or buy orders (bids) will be cancelled. |
 
 ##### Responses
 
@@ -189,8 +189,7 @@ order["remaining_volume"]
 }
 ```
 
-
-Get an existent order.
+Get an open order.
 
 ##### HTTP Request
 `GET https://www.vexbi.com/api/v2/order?id=_ID_`
@@ -205,7 +204,7 @@ Get an existent order.
 
 | Code | Description |
 | ---- | ----------- |
-| 200 | Get an orders. |
+| 200 | Get a specific order. |
 
 ## Get Orders (paginated)
 
@@ -250,10 +249,10 @@ Get a list of existent orders.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | market | String | Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example 'BTCMXN'. All available markets can be found at /api/v2/markets. |
-| state | String | **Optional.** Filter order by state, default to 'wait' (active orders). |
+| state | String | **Optional.** Filter order by state, default to 'wait' (open orders). |
 | limit | Integer | **Optional.** (Defaults to 100) Limit the number of returned orders. |
 | page | Integer | **Optional.** Specify the page of paginated results. |
-| order_by | String | **Optional.** (Defaults to asc) If set, returned orders will be sorted in specific order. |
+| order_by | String | **Optional.** (Defaults to asc) If set, returned orders will be sorted in a specific order. |
 
 ##### Responses
 

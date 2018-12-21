@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the Vexbi API! We at Vexbi provide a simple and robust RESTful API to integrate orders booking into your workflow.
+Welcome to the Vexbi API! We at Vexbi provide a simple and robust RESTful API to interact with our exchange.
 
 At this time, we have language bindings for **Python** with more to come! You can view code examples on the right.
 
@@ -18,7 +18,7 @@ Once you have an account you will need an _APP_ID_ and an _APP_SECRET_ which you
 
 Just change the **www**.vexbi.com for **sandbox**.vexbi.com in every endpoint that you use.
 
-<aside class="warning">The Sandbox environment is not intended to be used to create real world orders. Orders booked in Sandbox will be using testnet networks only.</aside>
+<aside class="warning">The Sandbox environment is not intended to be used to create real orders. Orders booked in Sandbox will be using testnet networks only.</aside>
 
 #### Production environment
 
@@ -41,11 +41,11 @@ from vexbi import API
 api = API(app_id='APP_ID', secret_key='APP_SECRET')
 
 # If you want to make tests without impacting your funds
-# you can use our sandbox enviroment with:
+# you can use our sandbox environment with:
 api.use_sandbox()
 ```
 
-The best way to install Vexbi lib is with [PIP](https://pypi.python.org/pypi).
+The best way to install the Vexbi lib is with [PIP](https://pypi.python.org/pypi).
 To install the most recent version please run the following command.
 
 `pip install vexbi`
@@ -54,7 +54,7 @@ You can find the repo at [github.com/Vexbi/python-api-client](https://github.com
 
 ## Authentication
 
-When not using a supported Vexbi SDK, you need to authenticate manually to submit API calls. Vexbi uses __SHA1 HMAC encryption__ to authenticate API calls. Each request has to be authenticated by following these steps:
+When not using a Vexbi supported SDK, you need to authenticate manually to submit API calls. Vexbi uses __SHA1 HMAC encryption__ to authenticate API calls. Each request has to be authenticated by following these steps:
 
 1. A canonical string is first created using your HTTP headers containing the
 content-type, content-MD5, request URI and the timestamp. You can replace content-type and content-MD5 with a blank string if needed. The timestamp must be a valid HTTP date. The canonical string is computed as follows:
