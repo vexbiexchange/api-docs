@@ -1,0 +1,1043 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Vexbi API Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="python">Python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#vexbi-supported-sdks" class="toc-h2 toc-link" data-title="Vexbi-supported SDKs">Vexbi-supported SDKs</a>
+                  </li>
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account" class="toc-h1 toc-link" data-title="Account">Account</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-account-info" class="toc-h2 toc-link" data-title="Get Account Info">Get Account Info</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#markets" class="toc-h1 toc-link" data-title="Markets">Markets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-available-markets" class="toc-h2 toc-link" data-title="Get Available Markets">Get Available Markets</a>
+                  </li>
+                  <li>
+                    <a href="#get-tickers" class="toc-h2 toc-link" data-title="Get Tickers">Get Tickers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-order" class="toc-h2 toc-link" data-title="Create Order">Create Order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-an-order" class="toc-h2 toc-link" data-title="Cancel an Order">Cancel an Order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-all-orders" class="toc-h2 toc-link" data-title="Cancel All Orders">Cancel All Orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-order" class="toc-h2 toc-link" data-title="Get Order">Get Order</a>
+                  </li>
+                  <li>
+                    <a href="#get-orders-paginated" class="toc-h2 toc-link" data-title="Get Orders (paginated)">Get Orders (paginated)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#trades" class="toc-h1 toc-link" data-title="Trades">Trades</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-market-trades" class="toc-h2 toc-link" data-title="Get Market Trades">Get Market Trades</a>
+                  </li>
+                  <li>
+                    <a href="#get-my-trades" class="toc-h2 toc-link" data-title="Get My Trades">Get My Trades</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://vexbi.com'>Go to Vexbi.com</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Vexbi API! We at Vexbi provide a simple and robust RESTful API to interact with our exchange.</p>
+
+<p>At this time, we have language bindings for <strong>Python</strong> with more to come! You can view code examples on the right.</p>
+<h4 id='api-versions'>API Versions</h4>
+<p>All API calls are versioned, and the current Vexbi API is v1.0. We will never introduce any breaking changes within any version, but may add new, non-breaking features and enhancements from time to time.</p>
+<h4 id='sandbox-environment'>Sandbox environment</h4>
+<p>For your convenience Vexbi offers a Sandbox environment where you can confidently test your code.</p>
+
+<p>To start using the API in the <strong>Sandbox</strong> environment you need to first create an account at <a href="https://sandbox.vexbi.com">sandbox.vexbi.com</a>.</p>
+
+<p>Once you have an account you will need an <em>APP_ID</em> and an <em>APP_SECRET</em> which you can generate in <a href="https://sandbox.vexbi.com/authentications">sandbox.vexbi.com/access_tokens</a>.</p>
+
+<p>Just change the <strong>www</strong>.vexbi.com for <strong>sandbox</strong>.vexbi.com in every endpoint that you use.</p>
+
+<aside class="warning">The Sandbox environment is not intended to be used to create real orders. Orders booked in Sandbox will be using testnet networks only.</aside>
+<h4 id='production-environment'>Production environment</h4>
+<p>To start using the API in the <strong>Production</strong> environment you need to first create an account at <a href="https://www.vexbi.com">vexbi.com</a>.</p>
+
+<p>Once you have an account you will need an <em>APP_ID</em> and an <em>APP_SECRET</em> which you can generate in <a href="https://www.vexbi.com/authentications">vexbi.com/authentications</a>.</p>
+<h2 id='vexbi-supported-sdks'>Vexbi-supported SDKs</h2>
+<p>We currently suppport <strong>Python</strong> but are working on adding more languages.</p>
+<h3 id='python'>Python</h3><pre class="highlight python tab-python"><code><span class="c"># Import the API Client </span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+
+<span class="c"># Configure Vexbi Library, you will </span>
+<span class="c"># pass this to every call you make to our servers.</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="c"># If you want to make tests without impacting your funds</span>
+<span class="c"># you can use our sandbox environment with:</span>
+<span class="n">api</span><span class="o">.</span><span class="n">use_sandbox</span><span class="p">()</span>
+</code></pre>
+<p>The best way to install the Vexbi lib is with <a href="https://pypi.python.org/pypi">PIP</a>.
+To install the most recent version please run the following command.</p>
+
+<p><code>pip install vexbi</code></p>
+
+<p>You can find the repo at <a href="https://github.com/Vexbi/python-api-client/">github.com/Vexbi/python-api-client</a></p>
+<h2 id='authentication'>Authentication</h2>
+<p>When not using a Vexbi supported SDK, you need to authenticate manually to submit API calls. Vexbi uses <strong>SHA1 HMAC encryption</strong> to authenticate API calls. Each request has to be authenticated by following these steps:</p>
+
+<ol>
+<li>A canonical string is first created using your HTTP headers containing the
+content-type, content-MD5, request URI and the timestamp. You can replace content-type and content-MD5 with a blank string if needed. The timestamp must be a valid HTTP date. The canonical string is computed as follows:</li>
+</ol>
+
+<p><code>canonical_string = &#39;http method,content-type,content-MD5,request URI,timestamp&#39;</code></p>
+
+<ol>
+<li><p>This string is then used to create the signature, which is a Base64 encoded
+SHA1 HMAC, using the <strong>APP_SECRET</strong> key.</p></li>
+<li><p>This signature is then added as the <code>Authorization</code> HTTP header in the following form:</p></li>
+</ol>
+
+<p><code>Authorization: APIAuth APP-ID:signature-from-step-2</code></p>
+
+<!-- ```ruby
+app_id = '<APP_ID>'
+app_secret = '<APP_SECRET>'
+rest_request = RestClient::Request.new(
+  url: 'https://www.vexbi.com/api/v1/documents',
+  method: :get,
+)
+response = ApiAuth.sign!(rest_request, app_id, app_secret).execute
+json_response = JSON.load(response)
+```
+
+### Ruby Example
+
+If you are using Ruby, we recommend using our [official gem](https://github.com/Vexbi/ruby-api-client).
+
+If you want to create your own, you can use the [api-auth](https://github.com/mgomes/api_auth/) gem which supports many popular HTTP clients. In this example we are using the [RestClient](https://github.com/rest-client/rest-client) gem. -->
+<h1 id='account'>Account</h1>
+<p>Interact with your profile and accounts.</p>
+<h2 id='get-account-info'>Get Account Info</h2><pre class="highlight python tab-python"><code><span class="c"># Get Account Info</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">account_info</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_account_info</span><span class="p">()</span>
+<span class="n">email</span> <span class="o">=</span> <span class="n">account_info</span><span class="p">[</span><span class="s">"email"</span><span class="p">]</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"sn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SNDF3EF88F00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your@email.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"accounts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xrp"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5000.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bch"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0574985"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0315"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ltc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.99"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btc"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.13012197"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mxn"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"97969.238561911"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get your profile and accounts info.</p>
+<h5 id='http-request'>HTTP Request</h5>
+<p><code>GET https://www.vexbi.com/api/v2/members/me</code></p>
+<h5 id='responses'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Get your profile and accounts info.</td>
+</tr>
+</tbody></table>
+<h1 id='markets'>Markets</h1>
+<p>Fetch information about markets.</p>
+<h2 id='get-available-markets'>Get Available Markets</h2><pre class="highlight python tab-python"><code><span class="c"># Get Available Markets</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">markets</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_available_markets</span><span class="p">()</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/MXN"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ltcmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC/MXN"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bchmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCH/MXN"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xrpmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XRP/MXN"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Get all available markets.</p>
+<h5 id='http-request'>HTTP Request</h5>
+<p><code>GET https://www.vexbi.com/api/v2/markets</code></p>
+<h5 id='responses'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Get all available markets.</td>
+</tr>
+</tbody></table>
+<h2 id='get-tickers'>Get Tickers</h2><pre class="highlight python tab-python"><code><span class="c"># Get Tickers</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">tickers</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">tickers</span><span class="p">()</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+  </span><span class="s2">"btcmxn"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1544814469</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"buy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"68668.714434"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sell"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70000.0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71285.84813089"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71285.84813089"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71285.84813089"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"ltcmxn"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1544814469</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"bchmxn"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1544814469</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"xrpmxn"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1544814469</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get tickers for all markets.</p>
+<h5 id='http-request-2'>HTTP Request</h5>
+<p><code>GET https://www.vexbi.com/api/v2/tickers</code></p>
+<h5 id='responses-2'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Get tickers for all markets.</td>
+</tr>
+</tbody></table>
+<h1 id='orders'>Orders</h1>
+<p>Managing orders programatically can be done using the following methods.</p>
+<h2 id='create-order'>Create Order</h2><pre class="highlight python tab-python"><code><span class="c"># Create Order</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">order_data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'market'</span><span class="p">:</span> <span class="s">'btcmxn'</span><span class="p">,</span> 
+  <span class="s">'side'</span><span class="p">:</span> <span class="s">'sell'</span><span class="p">,</span>
+  <span class="s">'volume'</span><span class="p">:</span> <span class="s">'0.05'</span><span class="p">,</span>
+  <span class="s">'price'</span><span class="p">:</span> <span class="s">'70000.0'</span>
+<span class="p">}</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">order_data</span><span class="o">=</span><span class="n">order_data</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50790</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70000.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T13:19:24-06:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Create and place a new sell/buy order.</p>
+<h5 id='http-request'>HTTP Request</h5>
+<p><code>POST https://www.vexbi.com/api/v2/orders</code></p>
+<h5 id='parameters'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example &#39;BTCMXN&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>side</td>
+<td>String</td>
+<td>Either &#39;sell&#39; or &#39;buy&#39;.</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>String</td>
+<td>The amount to sell or buy. Bear in mind that an order can be partially executed. For example a sell order of 5 BTC can be matched with a buy order for 3 BTC, resulting in an outstanding balance of 2 BTC waiting to be sold. For this scenario the order&#39;s volume would be &#39;5.0&#39;, its remaining_volume would be &#39;2.0&#39; and its executed volume would be &#39;3.0&#39;.</td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td><strong>Optional.</strong> (Defaults to market price) Price for each unit. For example If you want to sell/buy 1 BTC at 3000 MXN, the price is &#39;3000.00&#39;</td>
+</tr>
+</tbody></table>
+<h5 id='responses'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Create a Sell/Buy order.</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-an-order'>Cancel an Order</h2><pre class="highlight python tab-python"><code><span class="c"># Cancel Order</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">order</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">delete_order</span><span class="p">(</span><span class="n">order_id</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50790</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70000.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T13:19:24-06:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cancel an order already placed.</p>
+<h5 id='http-request-2'>HTTP Request</h5>
+<p><code>POST https://www.vexbi.com/api/v2/order/delete</code></p>
+<h5 id='parameters-2'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Integer</td>
+<td>Unique order id.</td>
+</tr>
+</tbody></table>
+<h5 id='responses-2'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Cancel an order.</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-all-orders'>Cancel All Orders</h2><pre class="highlight python tab-python"><code><span class="c"># Cancel All Orders</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">clear_selection</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'side'</span><span class="p">:</span> <span class="s">'sell'</span> <span class="p">}</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">clear_all</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">clear_selection</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70000.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T13:16:34-06:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50853</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Cancel all your open orders or open orders for a specific side only.</p>
+<h5 id='http-request-3'>HTTP Request</h5>
+<p><code>POST https://www.vexbi.com/api/v2/orders/clear</code></p>
+<h5 id='parameters-3'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>side</td>
+<td>String</td>
+<td><strong>Optional.</strong> (<code>sell</code> or <code>buy</code>) If present, only sell orders (asks) or buy orders (bids) will be cancelled.</td>
+</tr>
+</tbody></table>
+<h5 id='responses-3'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>201</td>
+<td>Cancel all my orders.</td>
+</tr>
+</tbody></table>
+<h2 id='get-order'>Get Order</h2><pre class="highlight python tab-python"><code><span class="c"># Get Order</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">order</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_order</span><span class="p">(</span><span class="n">order_id</span><span class="o">=</span><span class="mi">50792</span><span class="p">)</span>
+<span class="n">order</span><span class="p">[</span><span class="s">"id"</span><span class="p">]</span>
+<span class="n">order</span><span class="p">[</span><span class="s">"remaining_volume"</span><span class="p">]</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50792</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70000.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T13:19:24-06:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get an open order.</p>
+<h5 id='http-request-4'>HTTP Request</h5>
+<p><code>GET https://www.vexbi.com/api/v2/order?id=_ID_</code></p>
+<h5 id='parameters-4'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Unique order id.</td>
+</tr>
+</tbody></table>
+<h5 id='responses-4'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Get a specific order.</td>
+</tr>
+</tbody></table>
+<h2 id='get-orders-paginated'>Get Orders (paginated)</h2><pre class="highlight python tab-python"><code><span class="c"># Get Orders (Paginated)</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'limit'</span><span class="p">:</span> <span class="mi">30</span> <span class="p">}</span>
+<span class="n">orders</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_orders</span><span class="p">(</span><span class="n">market</span><span class="o">=</span><span class="s">'btcmxn'</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="n">query</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50792</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ord_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70000.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avg_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wait"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T13:19:24-06:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remaining_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"executed_volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trades_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Get a list of existent orders.</p>
+<h5 id='http-request-5'>HTTP Request</h5>
+<p><code>GET https://www.vexbi.com/api/v2/orders?market=_MKT_&amp;limit=_LIMIT_</code></p>
+<h5 id='parameters-5'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example &#39;BTCMXN&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>String</td>
+<td><strong>Optional.</strong> Filter order by state, default to &#39;wait&#39; (open orders).</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> (Defaults to 100) Limit the number of returned orders.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> Specify the page of paginated results.</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>String</td>
+<td><strong>Optional.</strong> (Defaults to asc) If set, returned orders will be sorted in a specific order.</td>
+</tr>
+</tbody></table>
+<h5 id='responses-5'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Get a list of orders.</td>
+</tr>
+</tbody></table>
+<h1 id='trades'>Trades</h1>
+<p>Fetch information about trades.</p>
+<h2 id='get-market-trades'>Get Market Trades</h2><pre class="highlight python tab-python"><code><span class="c"># Get Market Trades</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'limit'</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+  <span class="s">'from'</span><span class="p">:</span> <span class="mi">10</span>
+<span class="p">}</span>
+<span class="n">trades</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">trades</span><span class="p">(</span><span class="n">market</span><span class="o">=</span><span class="s">'btcmxn'</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="n">query</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi
+<code>json
+[
+  {
+    &quot;id&quot;: 563,
+    &quot;price&quot;: &quot;71285.84813089&quot;,
+    &quot;volume&quot;: &quot;0.1&quot;,
+    &quot;funds&quot;: &quot;7128.584813089&quot;,
+    &quot;market&quot;: &quot;btcmxn&quot;,
+    &quot;created_at&quot;: &quot;2018-12-14T12:46:15-06:00&quot;,
+    &quot;side&quot;: null,
+    &quot;type&quot;: &quot;buy&quot;
+  },
+  {
+    &quot;id&quot;: 562,
+    &quot;price&quot;: &quot;68668.714434&quot;,
+    &quot;volume&quot;: &quot;0.00343854&quot;,
+    &quot;funds&quot;: &quot;236.12012132988636&quot;,
+    &quot;market&quot;: &quot;btcmxn&quot;,
+    &quot;created_at&quot;: &quot;2018-12-12T16:48:18-06:00&quot;,
+    &quot;side&quot;: null,
+    &quot;type&quot;: &quot;sell&quot;
+  },
+  ...
+]
+</code></p>
+</blockquote>
+
+<p>Get recent trades (each trade is included only once). Trades are sorted in order of most recent to least recent.</p>
+<h5 id='http-request'>HTTP Request</h5>
+<p><code>GET https://www.vexbi.com/api/v2/trades</code></p>
+<h5 id='parameters'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example &#39;BTCMXN&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> Limit the number of returned trades. Default to 50.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> An integer represents the seconds elapsed since UNIX Epoch. If set, only trades executed before the time will be returned.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> Trade id. If set, only trades created AFTER this will be returned.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> Trade id. If set, only trades created BEFORE this will be returned.</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>String</td>
+<td><strong>Optional.</strong> If set, returned trades will be sorted in a specific order, defaulting to ‘desc’ (descending).</td>
+</tr>
+</tbody></table>
+<h5 id='responses'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Get recent trades on market.</td>
+</tr>
+</tbody></table>
+<h2 id='get-my-trades'>Get My Trades</h2><pre class="highlight python tab-python"><code><span class="c"># Get My Trades</span>
+<span class="kn">from</span> <span class="nn">vexbi</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">API</span><span class="p">(</span><span class="n">app_id</span><span class="o">=</span><span class="s">'APP_ID'</span><span class="p">,</span> <span class="n">secret_key</span><span class="o">=</span><span class="s">'APP_SECRET'</span><span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'from'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="s">'to'</span><span class="p">:</span> <span class="mi">120</span>
+<span class="p">}</span>
+<span class="n">trades</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">my_trades</span><span class="p">(</span><span class="n">market</span><span class="o">=</span><span class="s">'btcmxn'</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="n">query</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response from Vexbi:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">563</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71285.84813089"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"funds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7128.584813089"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-14T12:46:15-06:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50787</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185000.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"funds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcmxn"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-06T18:48:50-06:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ask"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1605</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Get your executed trades. Trades are sorted in order of most to least recent.</p>
+<h5 id='http-request-2'>HTTP Request</h5>
+<p><code>GET https://www.vexbi.com/api/v2/trades/my</code></p>
+<h5 id='parameters-2'>Parameters</h5>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>String</td>
+<td>Unique market id. It&#39;s always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, for example &#39;BTCMXN&#39;. All available markets can be found at /api/v2/markets.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> Limit the number of returned trades. Default to 50.</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> An integer represents the seconds elapsed since UNIX Epoch. If set, only trades executed before the time will be returned.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> Trade id. If set, only trades created AFTER this will be returned.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>Integer</td>
+<td><strong>Optional.</strong> Trade id. If set, only trades created BEFORE this will be returned.</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>String</td>
+<td><strong>Optional.</strong> If set, returned trades will be sorted in a specific order, defaulting to ‘desc’ (descending).</td>
+</tr>
+</tbody></table>
+<h5 id='responses-2'>Responses</h5>
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Get your executed trades.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="python">Python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
