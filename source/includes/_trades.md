@@ -20,9 +20,9 @@ trades = api.trades(market='btcmxn', query=query)
 [
   {
     "id": 563,
-    "price": "71285.84813089",
+    "price": "71285.84",
     "volume": "0.1",
-    "funds": "7128.584813089",
+    "funds": "7128.58",
     "market": "btcmxn",
     "created_at": "2018-12-14T12:46:15-06:00",
     "side": null,
@@ -30,9 +30,9 @@ trades = api.trades(market='btcmxn', query=query)
   },
   {
     "id": 562,
-    "price": "68668.714434",
+    "price": "68668.71",
     "volume": "0.00343854",
-    "funds": "236.12012132988636",
+    "funds": "236.12",
     "market": "btcmxn",
     "created_at": "2018-12-12T16:48:18-06:00",
     "side": null,
@@ -84,9 +84,9 @@ trades = api.my_trades(market='btcmxn', query=query)
 [
   {
     "id": 563,
-    "price": "71285.84813089",
+    "price": "71285.84",
     "volume": "0.1",
-    "funds": "7128.584813089",
+    "funds": "7128.58",
     "market": "btcmxn",
     "created_at": "2018-12-14T12:46:15-06:00",
     "side": "bid",
@@ -95,9 +95,9 @@ trades = api.my_trades(market='btcmxn', query=query)
   },
   {
     "id": 46,
-    "price": "185000.0",
+    "price": "185000.00",
     "volume": "0.001",
-    "funds": "185.0",
+    "funds": "185.00",
     "market": "btcmxn",
     "created_at": "2018-11-06T18:48:50-06:00",
     "side": "ask",

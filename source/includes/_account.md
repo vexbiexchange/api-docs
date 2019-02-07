@@ -22,28 +22,28 @@ email = account_info["email"]
   "accounts": [
     {
       "currency": "xrp",
-      "balance": "5000.0",
-      "locked": "0.0"
+      "balance": "5000.00000000",
+      "locked": "0.00000000"
     },
     {
       "currency": "bch",
-      "balance": "0.0574985",
-      "locked": "0.0315"
+      "balance": "0.05749850",
+      "locked": "0.03150000"
     },
     {
       "currency": "ltc",
-      "balance": "3.99",
-      "locked": "0.0"
+      "balance": "3.99000000",
+      "locked": "0.00000000"
     },
     {
       "currency": "btc",
       "balance": "0.13012197",
-      "locked": "0.05"
+      "locked": "0.05000000"
     },
     {
       "currency": "mxn",
-      "balance": "97969.238561911",
-      "locked": "0.0"
+      "balance": "97969.23",
+      "locked": "0.00"
     }
   ]
 }

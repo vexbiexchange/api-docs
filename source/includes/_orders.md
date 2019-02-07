@@ -13,7 +13,7 @@ order_data = {
   'market': 'btcmxn', 
   'side': 'sell',
   'volume': '0.05',
-  'price': '70000.0'
+  'price': '70000.00'
 }
 order = api.create_order(order_data=order_data)
 ```
@@ -25,8 +25,8 @@ order = api.create_order(order_data=order_data)
   "id": 50790,
   "side": "sell",
   "ord_type": "limit",
-  "price": "70000.0",
-  "avg_price": "0.0",
+  "price": "70000.00",
+  "avg_price": "0.00",
   "state": "wait",
   "market": "btcmxn",
   "created_at": "2018-12-14T13:19:24-06:00",
@@ -74,8 +74,8 @@ order = api.delete_order(order_id=10)
   "id": 50790,
   "side": "sell",
   "ord_type": "limit",
-  "price": "70000.0",
-  "avg_price": "0.0",
+  "price": "70000.00",
+  "avg_price": "0.00",
   "state": "wait",
   "market": "btcmxn",
   "created_at": "2018-12-14T13:19:24-06:00",
@@ -122,8 +122,8 @@ result = api.clear_all(data=clear_selection)
     "id": 50789,
     "side": "sell",
     "ord_type": "limit",
-    "price": "70000.0",
-    "avg_price": "0.0",
+    "price": "70000.00",
+    "avg_price": "0.00",
     "state": "wait",
     "market": "btcmxn",
     "created_at": "2018-12-14T13:16:34-06:00",
@@ -176,8 +176,8 @@ order["remaining_volume"]
   "id": 50792,
   "side": "sell",
   "ord_type": "limit",
-  "price": "70000.0",
-  "avg_price": "0.0",
+  "price": "70000.00",
+  "avg_price": "0.00",
   "state": "wait",
   "market": "btcmxn",
   "created_at": "2018-12-14T13:19:24-06:00",
@@ -225,8 +225,8 @@ orders = api.get_orders(market='btcmxn', query=query)
     "id": 50792,
     "side": "sell",
     "ord_type": "limit",
-    "price": "70000.0",
-    "avg_price": "0.0",
+    "price": "70000.00",
+    "avg_price": "0.00",
     "state": "wait",
     "market": "btcmxn",
     "created_at": "2018-12-14T13:19:24-06:00",
@@ -239,7 +239,7 @@ orders = api.get_orders(market='btcmxn', query=query)
 ]
 ```
 
-Get a list of existent orders.
+Get a list of open orders.
 
 ##### HTTP Request
 `GET https://www.vexbi.com/api/v2/orders?market=_MKT_&limit=_LIMIT_`
@@ -258,4 +258,4 @@ Get a list of existent orders.
 
 | Code | Description |
 | ---- | ----------- |
-| 200 | Get a list of orders. |
+| 200 | Get a list of open orders. |
